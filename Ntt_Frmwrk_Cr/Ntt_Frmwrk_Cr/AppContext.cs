@@ -18,7 +18,9 @@ namespace Ntt_Frmwrk_Cr
         }
         public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
         {
-            builder.AddProvider(new LoggerProvider());
+            builder.AddFilter((category, level) => category == DbLoggerCategory.Database.Command.Name
+                        && level == LogLevel.Information)
+        .AddProvider(new LoggerProvider());
         });
     }
 }
