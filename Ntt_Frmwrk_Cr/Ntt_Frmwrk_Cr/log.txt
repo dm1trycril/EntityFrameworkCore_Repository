@@ -1,0 +1,19 @@
+Entity Framework Core 3.1.8 initialized 'AppContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: NoneExecuted DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1Executed DbCommand (64ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Age], [u].[Name]
+FROM [Users] AS [u]
