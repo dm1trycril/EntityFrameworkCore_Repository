@@ -29,19 +29,25 @@ namespace Ntt_Frmwrk_Cr
 
             using (AppContext db = new AppContext())
             {
-                //При первом запуске добаляем два объекта
-                //User user1 = new User { Name = "Tom", Age = 33 };
-                //User user2 = new User { Name = "Alice", Age = 27 };
+                //при первом запуске добаляем два объекта
+                //User user1 = new User { Name = "Rick", Age = 63 };
+                //User user2 = new User { Name = "Morty", Age = 16 };
                 //db.Users.AddRange(user1, user2);
                 //db.SaveChanges();
 
                 //db.GetService<ILoggerFactory>().AddProvider(new LoggerProvider());
 
                 var users = db.Users.ToList();
+
+                ConsoleColor color = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.DarkGreen;
+
                 foreach (User u in users)
                 {
                     Console.WriteLine($"{u.Id}.{u.Name} - {u.Age}");
                 }
+
+                Console.ForegroundColor = color;
             }
             //Console.Read();
         }

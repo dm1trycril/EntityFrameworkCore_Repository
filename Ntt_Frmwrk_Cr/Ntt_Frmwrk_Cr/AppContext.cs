@@ -13,8 +13,8 @@ namespace Ntt_Frmwrk_Cr
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=NttFramwrkCr_db;Trusted_Connection=True;");
-            //optionsBuilder.UseLoggerFactory(loggerFactory);
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=NttFrmwrkCr_db;Trusted_Connection=True;");
+            optionsBuilder.UseLoggerFactory(loggerFactory);
         }
         public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
         {
