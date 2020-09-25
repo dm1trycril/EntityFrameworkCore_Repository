@@ -12,22 +12,22 @@ namespace Ntt_Frmwrk_Cr
     {
         static void Main(string[] args)
         {
-            var builder = new ConfigurationBuilder();
-            // установка пути к текущему каталогу
-            builder.SetBasePath(Directory.GetCurrentDirectory());
-            // получаем конфигурацию из файла appsettings.json
-            builder.AddJsonFile("appsettings.json");
-            // создаем конфигурацию
-            var config = builder.Build();
-            // получаем строку подключения
-            string connectionString = config.GetConnectionString("DefaultConnection");
+            //var builder = new ConfigurationBuilder();
+            //// установка пути к текущему каталогу
+            //builder.SetBasePath(Directory.GetCurrentDirectory());
+            //// получаем конфигурацию из файла appsettings.json
+            //builder.AddJsonFile("appsettings.json");
+            //// создаем конфигурацию
+            //var config = builder.Build();
+            //// получаем строку подключения
+            //string connectionString = config.GetConnectionString("DefaultConnection");
 
-            var optionsBuilder = new DbContextOptionsBuilder<AppContext>();
-            var options = optionsBuilder
-                .UseSqlServer(connectionString)
-                .Options;
+            //var optionsBuilder = new DbContextOptionsBuilder<AppContext>();
+            //var options = optionsBuilder
+            //    .UseSqlServer(connectionString)
+            //    .Options;
 
-            using (AppContext db = new AppContext(options))
+            using (AppContext db = new AppContext())
             {
                 //При первом запуске добаляем два объекта
                 //User user1 = new User { Name = "Tom", Age = 33 };

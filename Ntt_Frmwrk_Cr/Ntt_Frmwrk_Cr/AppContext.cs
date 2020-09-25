@@ -7,13 +7,13 @@ namespace Ntt_Frmwrk_Cr
     {
         public DbSet<User> Users { get; set; }
 
-        public AppContext(DbContextOptions<AppContext> options)
-            : base(options)
+        public AppContext()
         {
             Database.EnsureCreated();
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=helloappdb;Trusted_Connection=True;");
             optionsBuilder.UseLoggerFactory(loggerFactory);
         }
         public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
