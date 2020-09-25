@@ -15,10 +15,14 @@ namespace Ntt_Frmwrk_Cr
             using (AppContext db = new AppContext())
             {
                 var users = db.Users.ToList();
+
+                ConsoleColor color = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Green;
                 foreach (User u in users)
                 {
                     Console.WriteLine($"{u.Id}.{u.Name} - {u.Age}");
                 }
+                Console.ForegroundColor = color;
             }
             //Console.Read();
         }

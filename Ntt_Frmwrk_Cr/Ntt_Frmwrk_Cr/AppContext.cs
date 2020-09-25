@@ -35,7 +35,8 @@ namespace Ntt_Frmwrk_Cr
         }
         public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
         {
-            builder.AddProvider(new LoggerProvider());
+            builder.AddConsole();
+            //builder.AddProvider(new LoggerProvider());
         });
     }
 }
