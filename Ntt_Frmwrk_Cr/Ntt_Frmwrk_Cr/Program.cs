@@ -3,6 +3,8 @@ using System.Linq;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using System.IO;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.Extensions.Logging;
 
 namespace Ntt_Frmwrk_Cr
 {
@@ -28,10 +30,12 @@ namespace Ntt_Frmwrk_Cr
             using (AppContext db = new AppContext(options))
             {
                 //При первом запуске добаляем два объекта
-                    //User user1 = new User { Name = "Tom", Age = 33 };
-                    //User user2 = new User { Name = "Alice", Age = 27 };
-                    //db.Users.AddRange(user1, user2);
-                    //db.SaveChanges();
+                //User user1 = new User { Name = "Tom", Age = 33 };
+                //User user2 = new User { Name = "Alice", Age = 27 };
+                //db.Users.AddRange(user1, user2);
+                //db.SaveChanges();
+
+                //db.GetService<ILoggerFactory>().AddProvider(new LoggerProvider());
 
                 var users = db.Users.ToList();
                 foreach (User u in users)

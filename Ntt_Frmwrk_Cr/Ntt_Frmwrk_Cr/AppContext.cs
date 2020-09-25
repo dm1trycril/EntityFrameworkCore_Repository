@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Microsoft.Extensions.Logging;
 
 namespace Ntt_Frmwrk_Cr
 {
@@ -14,5 +12,13 @@ namespace Ntt_Frmwrk_Cr
         {
             Database.EnsureCreated();
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
+        {
+            optionsBuilder.UseLoggerFactory(loggerFactory);
+        }
+        public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
+        {
+            builder.AddProvider(new LoggerProvider());
+        });
     }
 }
