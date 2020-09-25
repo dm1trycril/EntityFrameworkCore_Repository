@@ -10,3 +10,4 @@ Add in NuGet package manager:
   -Microsoft.Extensions.Configuration
   -Microsoft.Extensions.Configuration.Json
   -Microsoft.Extensions.Configuration.FileExtensions
+  -Microsoft.Extensions.Logging.Console
