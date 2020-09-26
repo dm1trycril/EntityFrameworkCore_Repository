@@ -12,7 +12,7 @@ namespace Ntt_Frmwrk_Cr
         public AppContext(DbContextOptions<AppContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
     }
 }
