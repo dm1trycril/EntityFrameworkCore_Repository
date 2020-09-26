@@ -38,5 +38,10 @@ namespace Ntt_Frmwrk_Cr
             builder.AddConsole();
             //builder.AddProvider(new LoggerProvider());
         });
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // использование Fluent API
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
