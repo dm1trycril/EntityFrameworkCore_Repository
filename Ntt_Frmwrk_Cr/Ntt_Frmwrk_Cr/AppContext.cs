@@ -14,14 +14,19 @@ namespace Ntt_Frmwrk_Cr
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) 
         {
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=NttFrmwrkCr_db;Trusted_Connection=True;");
-            optionsBuilder.UseLoggerFactory(loggerFactory);
+            //optionsBuilder.UseLoggerFactory(loggerFactory);
         }
         public static readonly ILoggerFactory loggerFactory = LoggerFactory.Create(builder =>
         {
             builder.AddConsole();
-        //    builder.AddFilter((category, level) => category == DbLoggerCategory.Database.Command.Name
-        //                && level == LogLevel.Information)
-        //.AddProvider(new LoggerProvider());
+            //    builder.AddFilter((category, level) => category == DbLoggerCategory.Database.Command.Name
+            //                && level == LogLevel.Information)
+            //.AddProvider(new LoggerProvider());
         });
+        //Fluet API
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
