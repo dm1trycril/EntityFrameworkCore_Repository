@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ntt_Frmwrk_Cr
 {
+    [Table("People")]
     public class User
     {
         public int Id { get; set; }
