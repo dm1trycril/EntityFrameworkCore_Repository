@@ -14,8 +14,11 @@ namespace Ntt_Frmwrk_Cr.v2
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //С помощью этой строки после миграции из БД исключается таблица Company
+            //ИСКОЮЧЕНИЕ С ПОМОЩЬЮ FLUENT API:
+            //С помощью этой строки игнорируется сущность Company, и таблица не вноситься в БД
             modelBuilder.Ignore<Company>();
+            //С помощью этой строки игнорируется сущность Rate, и не вноситься в таблицу Product в БД 
+            modelBuilder.Entity<Product>().Ignore(b => b.Rate);
             //modelBuilder.Entity<Country>();
         }
     }

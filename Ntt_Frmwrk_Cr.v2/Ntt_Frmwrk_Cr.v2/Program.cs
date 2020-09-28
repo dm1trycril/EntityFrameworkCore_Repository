@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
 namespace Ntt_Frmwrk_Cr.v2
@@ -35,6 +36,10 @@ namespace Ntt_Frmwrk_Cr.v2
         public int Id { get; set; }
         public string Name { get; set; }
         public int Price { get; set; }
+        
+        //ИСКЛЮЧЕНИ С ПОМОЩЬЮ АННОТАЦИОННЫХ ДАННЫХ
+        //[NotMapped]
+        public int Rate{get; set;}
         public Company Manufacturer { get; set; }
     }
     public class Company
